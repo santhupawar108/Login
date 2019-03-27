@@ -1,4 +1,4 @@
-package com.sun;
+package com.sun.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

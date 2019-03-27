@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.sun.LoginDao;
+import com.sun.dao.LoginDao;
 
 /**
  * Servlet implementation class LoginServ
@@ -39,11 +39,11 @@ public class LoginServ extends HttpServlet {
 		String uname = request.getParameter("uname");
 		String psw = request.getParameter("psw");
 		PrintWriter writer = response.getWriter();
-	LoginDao dao= new LoginDao();
-	System.out.println("Hello work");
+		LoginDao dao= new LoginDao();
+	//System.out.println("Hello work");
 
 		if(dao.validate(uname, psw)) {
-			//System.out.println("Hello work");
+			System.out.println("Hello work");
 			
 			HttpSession session = request.getSession();
 			session.setAttribute("uname", uname);
@@ -52,7 +52,7 @@ public class LoginServ extends HttpServlet {
 		}
 		else {
 			writer.print("Sorry Name and password is incorrect");
-			
+			System.out.println("not work");
 			response.sendRedirect("login.jsp");
 		} //close else
 		
